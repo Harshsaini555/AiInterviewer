@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Toaster} from './Components/ui/sonner';
 import { LandingPage } from './pages/LandingPage';
 import { ResumeUploadPage } from './pages/ResumeUpload';
+import JobPosting from './Components/JobPosting/JobPost';
+import JobMatches from './Components/JobMatches/JobMatches';
 
 export default function App() {
   return (
@@ -12,7 +14,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/resume-upload" element={<ResumeUploadPage />} />
+          <Route path="/resume-upload" element={<JobMatches />} />
         </Routes>
       </Router>
     </>

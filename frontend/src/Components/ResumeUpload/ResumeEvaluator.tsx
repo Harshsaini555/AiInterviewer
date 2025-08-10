@@ -47,7 +47,7 @@ export const ResumeEvaluator: React.FC = () => {
         icon: <CheckCircle className="h-4 w-4 text-green-500" />,
         });
 
-        if (result.atsResult.score >= 80) {
+        if (res.data.score >= 80) {
         setTimeout(() => setShowBadge(true), 1000);
         }
 
@@ -56,7 +56,7 @@ export const ResumeEvaluator: React.FC = () => {
 
         setUploadState("error");
 
-        toast.error("Upload failed: " + (err.response?.data?.message || err.message), {
+        toast.error("Upload failed: " + (err.response?.message || err.message), {
         icon: "⚠️",
         });
     }
@@ -188,9 +188,9 @@ export const ResumeEvaluator: React.FC = () => {
 
       {/* Badge Unlock Popup */}
       <AnimatePresence>
-        {showBadge && result && result.atsResult.score >= 80 && (
+        {showBadge && result && result.score >= 80 && (
           <BadgeUnlock 
-            score={result.atsResult.score}
+            score={result.score}
             onClose={() => setShowBadge(false)}
           />
         )}
